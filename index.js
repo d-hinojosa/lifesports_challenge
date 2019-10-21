@@ -21,9 +21,9 @@ app.use(express.json());
 // Serve up static assets (heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  uri = process.env.ATLAS_URI  // connection string for Atlas here  
+  uri = "mongodb+srv://xio:xio@cluster0-oorog.mongodb.net/endpoints?retryWrites=true&w=majority"  // connection string for Atlas here  
 } else {
-  uri = process.env.ATLAS_URI // connection string for localhost mongo here  
+  uri = "mongodb+srv://xio:xio@cluster0-oorog.mongodb.net/endpoints?retryWrites=true&w=majority" // connection string for localhost mongo here  
 }
 
 // connection to database
