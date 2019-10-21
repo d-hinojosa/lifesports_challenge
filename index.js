@@ -6,6 +6,9 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const fs =require('fs');
+const morgan = require('morgan');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -18,9 +21,9 @@ app.use(express.json());
 // Serve up static assets (heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  uri = ""  // connection string for Atlas here  
+  uri = process.env.LOCAL_URI  // connection string for Atlas here  
 } else {
-  uri = ""  // connection string for localhost mongo here  
+  uri = process.env.LOCAL_URI // connection string for localhost mongo here  
 }
 
 // connection to database

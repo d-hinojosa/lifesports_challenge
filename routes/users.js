@@ -15,11 +15,26 @@ let User = require('../models/user.model');
 // 1. get all users on record
 // GET: /
 // ========================================
-
+router.get('/',async (req,res)=> {
+    try{
+        const users = await User.find({}).exec();
+        res.send(users)
+    } catch (err) {
+        console.log(err)
+    }
+});
 
 // 2. add a new user
 // POST /add
 // ========================================
-
+router.post('/add', ({body}, res) => {
+    User.create(body)
+    .then(dbUser => {
+    res.json(dbUser);
+    })
+    .catch(err => {
+        res.json(err)
+    });
+});
 
 module.exports = router;
