@@ -6,7 +6,7 @@
 const router = require('express').Router();
 let Exercise = require('../models/exercise.model');
 
-// Your Challenge: Make five routes. Each will use mongojs methods
+// Your Challenge: Make five routes. Each will use mongojs method
 // to interact with your mongoDB database, as instructed below.
 // You will be using express Router and Mongoose
 // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
